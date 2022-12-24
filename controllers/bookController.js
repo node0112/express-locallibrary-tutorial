@@ -1,13 +1,13 @@
-const Book = require("../models/book");
-const Author = require("../models/author");
-const Genre = require("../models/genre");
-const BookInstance = require("../models/bookinstance");
+const Book = require("../Models/book");
+const Author = require("../Models/author");
+const Genre = require("../Models/genre");
+const BookInstance = require("../Models/bookinstance");
 
 const { body, validationResult } = require("express-validator"); //validator
 
 
 const async = require("async");
-const bookinstance = require("../models/bookinstance");
+const bookinstance = require("../Models/bookinstance");
 
 exports.index = (req, res) => {
     async.parallel(
