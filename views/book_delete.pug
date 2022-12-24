@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 #{title}: #{genre.name}
+
+  if bookinstance_books.length
+    p #[strong Delete the following instances before attempting to delete this Book.]
+
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Books
+
+      dl
+      each instance in bookinstance_books
+        dt
+          a(href=instance.url) Status: #{instance.status} | id: #{instance._id}
+
+  else if(bookinstance_books.length === 0)
+    p Do you really want to delete this Book?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#authorid.form-control(type='hidden',name='genreid', required='true', value=genre._id )
+
+      button.btn.btn-primary(type='submit') Delete
