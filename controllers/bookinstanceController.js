@@ -1,10 +1,10 @@
-const BookInstance = require("../Models/bookinstance");
+const BookInstance = require("../models/bookinstance");
 const { DateTime } = require("luxon");
-const Book = require("../Models/book");
+const Book = require("../models/book");
 const async = require("async");
 
 const { body, validationResult } = require("express-validator"); //validator
-const bookinstance = require("../Models/bookinstance");
+const bookinstance = require("../models/bookinstance");
 
 
 // Display list of all BookInstances.
